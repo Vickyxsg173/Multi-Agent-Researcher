@@ -3,8 +3,17 @@ from langchain.agents import create_agent
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from tools import web_search, scrape_url
+import os
 from dotenv import load_dotenv
 load_dotenv()
+
+# Inject Streamlit secrets into environment variables for Streamlit Cloud deployment
+try:
+    import streamlit as st
+    if "MISTRAL_API_KEY" in st.secrets:
+        os.environ["MISTRAL_API_KEY"] = st.secrets["MISTRAL_API_KEY"]
+except Exception:
+    pass
 
 llm = ChatMistralAI(model="mistral-small-latest", temperature=0)
 
