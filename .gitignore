@@ -1,0 +1,23 @@
+# Environments
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+.gemini/
+.system_generated/
+*.log
