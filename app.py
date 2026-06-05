@@ -187,6 +187,31 @@ st.markdown("""
         text-transform: uppercase;
         letter-spacing: 1px;
     }
+    
+    /* Responsive adjustments for mobile and tablets */
+    @media (max-width: 768px) {
+        .stApp {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+        }
+        h1 {
+            font-size: 32px !important;
+        }
+        .subtitle {
+            font-size: 14px !important;
+            margin-bottom: 20px !important;
+        }
+        .metric-value {
+            font-size: 42px !important;
+        }
+        /* Stack Streamlit columns on small viewports */
+        [data-testid="column"] {
+            width: 100% !important;
+            flex: 1 1 100% !important;
+            min-width: 100% !important;
+            margin-bottom: 10px !important;
+        }
+    }
 </style>
 """, unsafe_allow_html=True)
 
